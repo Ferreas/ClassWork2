@@ -20,17 +20,18 @@ namespace MainDomain.Entities
         //Maximum number of project employee can be engaged in
         private int MaxCapacity = 3;
         //Current number of projects employee is engaged in
+        private int _capacity=0;
         public int Capacity
         {
             get
             {
-                return Capacity;
+                return _capacity;
             }
             set
             {
                 if (value <= MaxCapacity)
                 {
-                    Capacity = value;
+                    _capacity = value;
                 }
                 else
                 {
@@ -43,7 +44,7 @@ namespace MainDomain.Entities
         {
             get
             {
-                if (Capacity < MaxCapacity)
+                if (_capacity < MaxCapacity)
                 {
                     return true;
                 }

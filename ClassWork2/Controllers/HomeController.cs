@@ -11,15 +11,14 @@ namespace ClassWork2.Controllers
         SystemContext _db = new SystemContext();
 
         public ActionResult Index()
-        {
-            ViewBag.Emp = _db.Employees.Take(1).ToList();
+        {           
             return View();
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
+            ViewBag.Emp = _db.Employees.Take(1).ToList();
             return View();
         }
 
